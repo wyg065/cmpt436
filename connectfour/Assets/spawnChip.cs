@@ -11,23 +11,9 @@ public class spawnChip : MonoBehaviour {
 
 	private GameObject gameMaster;
 
-	//Server Variables
-	public TcpClient clientSocket;
-	public NetworkStream serverStream;
-
-	//Class Constants
-	private const String WYATT_LOCAL_IP_ADDRESS = "172.16.1.65";
-	private const int GAME_SERVER_PORT = 8888;
-
 	// Use this for initialization
 	void Start () {
 		gameMaster = GameObject.Find ("GameMaster");
-
-		//Initialize server stuff
-		clientSocket = new TcpClient ();
-		clientSocket.Connect (WYATT_LOCAL_IP_ADDRESS, GAME_SERVER_PORT);
-		serverStream = default(NetworkStream);
-		serverStream = clientSocket.GetStream();
 	}
 	
 	// Update is called once per frame
@@ -48,11 +34,10 @@ public class spawnChip : MonoBehaviour {
 	}
 
 	void updateBoard() {
-		
-//		string readData = null;
-		byte[] outStream = System.Text.Encoding.ASCII.GetBytes ("M4k3 4m3r1c4 Gr8 4g41n");
-		serverStream.Write (outStream, 0, outStream.Length);
-		serverStream.Flush ();
+
+		byte[] outStream = System.Text.Encoding.ASCII.GetBytes ("123456");
+		gameMaster.GetComponent<gameMaster> ().serverStream.Write (outStream, 0, outStream.Length);
+		gameMaster.GetComponent<gameMaster> ().serverStream.Flush ();
 
 		if (gameMaster.GetComponent<gameMaster> ().turn == 1) {
 			playerPiece = player1Piece;
