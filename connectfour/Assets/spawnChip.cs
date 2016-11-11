@@ -102,16 +102,16 @@ public class spawnChip : MonoBehaviour {
 				}
 			}
 
-		String temp = "";
-		for (int i = 0; i < 6; i++)
-		{
-			for (int j = 0; j < 7; j++) {
-				temp = temp + gameMaster.GetComponent<gameMaster> ().board [i, j] + " ";
-			}
-			print (temp);
-			temp = "";
-		}
-		print ("================================");
+//		String temp = "";
+//		for (int i = 0; i < 6; i++)
+//		{
+//			for (int j = 0; j < 7; j++) {
+//				temp = temp + gameMaster.GetComponent<gameMaster> ().board [i, j] + " ";
+//			}
+//			print (temp);
+//			temp = "";
+//		}
+//		print ("================================");
 
 		checkWins (gameMaster.GetComponent<gameMaster> ().turn);
 	}
