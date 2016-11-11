@@ -33,11 +33,20 @@ public class spawnChip : MonoBehaviour {
 		}
 	}
 
-	void updateBoard() {
+	String boardToString() {
 
-		byte[] outStream = System.Text.Encoding.ASCII.GetBytes ("123456");
-		gameMaster.GetComponent<gameMaster> ().serverStream.Write (outStream, 0, outStream.Length);
-		gameMaster.GetComponent<gameMaster> ().serverStream.Flush ();
+		String temp = "";
+		for (int i = 0; i < 6; i++)
+		{
+			for (int j = 0; j < 7; j++) {
+				temp += gameMaster.GetComponent<gameMaster> ().board [i, j];
+			}
+		}
+
+		return temp;
+	}
+
+	void updateBoard() {
 
 		if (gameMaster.GetComponent<gameMaster> ().turn == 1) {
 			playerPiece = player1Piece;
@@ -74,7 +83,10 @@ public class spawnChip : MonoBehaviour {
 			Instantiate(playerPiece, new Vector3(transform.position.x, 6.0f, transform.position.z), Quaternion.identity);
 			specificUpdate (6);
 		}
-			
+
+		byte[] outStream = System.Text.Encoding.ASCII.GetBytes (boardToString());
+		gameMaster.GetComponent<gameMaster> ().serverStream.Write (outStream, 0, outStream.Length);
+		gameMaster.GetComponent<gameMaster> ().serverStream.Flush ();
 	}
 
 	void specificUpdate (int space) {

@@ -11,3 +11,7 @@
 /Users/Chris/UofS/05-FifthYear/Term1/CMPT436/Project/connectfour/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/Chris/UofS/05-FifthYear/Term1/CMPT436/Project/connectfour/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/Chris/UofS/05-FifthYear/Term1/CMPT436/Project/connectfour/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/Chris/UofS/05-FifthYear/Term1/CMPT436/Project/connectfour/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/Chris/UofS/05-FifthYear/Term1/CMPT436/Project/connectfour/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/Chris/UofS/05-FifthYear/Term1/CMPT436/Project/connectfour/obj/Debug/Assembly-CSharp.dll
+/Users/Chris/UofS/05-FifthYear/Term1/CMPT436/Project/connectfour/obj/Debug/Assembly-CSharp.dll.mdb
