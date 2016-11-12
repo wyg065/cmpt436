@@ -79,18 +79,28 @@ public class gameMaster : MonoBehaviour
 			break;
 
 		case 2:
+			Instantiate (player2Piece, new Vector3 (-1.75f, 6.0f, transform.position.z), Quaternion.identity);
+			specificUpdate (location);
 			break;
 
 		case 3:
+			Instantiate (player2Piece, new Vector3 (0.0f, 6.0f, transform.position.z), Quaternion.identity);
+			specificUpdate (location);
 			break;
 
 		case 4:
+			Instantiate (player2Piece, new Vector3 (1.75f, 6.0f, transform.position.z), Quaternion.identity);
+			specificUpdate (location);
 			break;
 
 		case 5:
+			Instantiate (player2Piece, new Vector3 (3.5f, 6.0f, transform.position.z), Quaternion.identity);
+			specificUpdate (location);
 			break;
 
 		case 6:
+			Instantiate (player2Piece, new Vector3 (5.25f, 6.0f, transform.position.z), Quaternion.identity);
+			specificUpdate (location);
 			break;
 
 		default:
