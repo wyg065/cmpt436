@@ -22,14 +22,11 @@ public class spawnChip : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		if (!gameMaster.GetComponent<gameMaster> ().wait) {
-			if (gameMaster.GetComponent<gameMaster> ().turn == 2){
-				updateBoard ();
-				gameMaster.GetComponent<gameMaster> ().turn = 1;
-			} else if (gameMaster.GetComponent<gameMaster> ().turn == 1) {
-				updateBoard ();
-				gameMaster.GetComponent<gameMaster> ().turn = 2;
-			}
+		if (!gameMaster.GetComponent<gameMaster> ().waitForServerResponse) {
+			updateBoard ();
+			gameMaster.GetComponent<gameMaster> ().turn = 1;
+		} else {
+			gameMaster.GetComponent<gameMaster> ().turn = 2;
 		}
 	}
 
@@ -112,8 +109,8 @@ public class spawnChip : MonoBehaviour {
 //			temp = "";
 //		}
 //		print ("================================");
-
-		checkWins (gameMaster.GetComponent<gameMaster> ().turn);
+		//TODO
+//		checkWins (gameMaster.GetComponent<gameMaster> ().turn);
 	}
 
 

@@ -44,7 +44,7 @@ public class gameMaster : MonoBehaviour
 		serverStream = clientSocket.GetStream ();
 
 		//send user name
-		byte[] outStream = System.Text.Encoding.ASCII.GetBytes ("jorge");
+		byte[] outStream = System.Text.Encoding.ASCII.GetBytes ("chris");
 		serverStream.Write (outStream, 0, outStream.Length);
 		serverStream.Flush ();
 
