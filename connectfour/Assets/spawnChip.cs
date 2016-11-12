@@ -22,12 +22,13 @@ public class spawnChip : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		if (!gameMaster.GetComponent<gameMaster> ().waitForServerResponse) {
+		if (gameMaster.GetComponent<gameMaster> ().waitForServerResponse) {
 			updateBoard ();
 			gameMaster.GetComponent<gameMaster> ().turn = 1;
-		} else {
-			gameMaster.GetComponent<gameMaster> ().turn = 2;
+			gameMaster.GetComponent<gameMaster> ().waitForServerResponse = false;
 		}
+
+
 	}
 
 	String boardToString() {

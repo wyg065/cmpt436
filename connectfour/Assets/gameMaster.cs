@@ -11,6 +11,7 @@ public class gameMaster : MonoBehaviour
 	public int turn;
 	public bool wait;
 	public volatile bool waitForServerResponse;
+	public volatile bool once;
 	public GameObject player2Piece;
 	public string stringFromServer;
 
@@ -26,7 +27,7 @@ public class gameMaster : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		waitForServerResponse = false;
+		waitForServerResponse = true;
 		stringFromServer = "";
 		turn = 1;
 		wait = false;
@@ -62,6 +63,7 @@ public class gameMaster : MonoBehaviour
 			string returnData = System.Text.Encoding.ASCII.GetString (inStream);
 			stringFromServer = returnData;
 			waitForServerResponse = true;
+			once = true;
 		}
 	}
 
@@ -163,7 +165,7 @@ public class gameMaster : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (waitForServerResponse) {
+		if (waitForServerResponse && once) {
 			int[,] temp = stringToBoard (stringFromServer);
 			int location = 0;
 			for (int i = 0; i < 6; i++) {
@@ -175,7 +177,7 @@ public class gameMaster : MonoBehaviour
 				}
 			}
 			updateBoard(location);
-			waitForServerResponse = false;
+			once = false;
 		}	
 	}
 }
